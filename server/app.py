@@ -10,6 +10,10 @@ CORS(app)
 db_service = DatabaseService()
 users_collection = db_service.get_collection("users")
 
+@app.route("/") 
+def index():
+    return "Welcome to the UserCRUD API!" 
+
 if __name__ == "__main__":
     from views import *
     app.run(debug=True)
